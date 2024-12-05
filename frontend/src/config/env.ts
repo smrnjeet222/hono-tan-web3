@@ -3,9 +3,8 @@ import { z } from "zod";
 // Define the schema as an object with all of the env
 // variables and their types
 const envSchema = z.object({
-	NODE_ENV: z
-		.union([z.literal("development"), z.literal("production")])
-		.default("development"),
+	VITE_WALLET_CONNECT_PROJECT_ID: z.string(),
+	VITE_ALCHEMY_KEY: z.string(),
 });
 
 // Validate `process.env` against our schema

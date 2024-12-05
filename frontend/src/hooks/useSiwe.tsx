@@ -45,7 +45,7 @@ export function useSiwe() {
 	});
 
 	const { address } = useAccount();
-	const session = useQuery(getSiweSession);
+	const session = useQuery({ ...getSiweSession, enabled: !!address });
 
 	const isAuthenticated =
 		!!address && session.data?.address.toLowerCase() === address?.toLowerCase();

@@ -17,11 +17,7 @@ export function CustomRainbowKitProvider({
 			adapter={authenticationAdapter}
 			status={isAuthenticated ? "authenticated" : "unauthenticated"}
 		>
-			<RainbowKitProvider
-				coolMode
-				showRecentTransactions={true}
-				theme={darkTheme()}
-			>
+			<RainbowKitProvider showRecentTransactions={true} theme={darkTheme()}>
 				{children}
 			</RainbowKitProvider>
 		</RainbowKitAuthenticationProvider>
