@@ -35,7 +35,6 @@
     "tailwind-merge": "^2.5.5",
     "tailwindcss": "4.0.0-beta.2",
     "viem": "2.x",
-    "wagmi": "^2.13.0",
-    "zod": "^3.23.8"
+    "wagmi": "^2.13.0"
   }
 }
