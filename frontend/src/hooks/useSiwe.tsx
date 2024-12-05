@@ -40,7 +40,7 @@ export function useSiwe() {
 
 		signOut: async () => {
 			await api.auth.logout.$post();
-			queryClient.setQueryData(getSiweSession.queryKey, undefined);
+			queryClient.setQueryData(getSiweSession.queryKey, null);
 		},
 	});
 

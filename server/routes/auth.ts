@@ -8,7 +8,6 @@ import { getAddress } from "viem";
 import { z } from "zod";
 import type { HonoContext } from "..";
 import env from "../config/env";
-import { loggedIn } from "../middleware/loggedIn";
 
 export const authRouter = new Hono<HonoContext>()
 	.get("/nonce", (c) => {
@@ -21,7 +20,7 @@ export const authRouter = new Hono<HonoContext>()
 		});
 		return c.text(nonce);
 	})
-	.get("/me", loggedIn, async (c) => {
+	.get("/me", async (c) => {
 		return c.json(c.get("user"), 200);
 	})
 	.post(
