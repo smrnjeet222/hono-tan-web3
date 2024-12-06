@@ -1,5 +1,5 @@
-import type { ApiRoutes } from "@/shared/types";
 import { hc } from "hono/client";
+import type { ApiRoutes } from "../../../server/src";
 
 const client = hc<ApiRoutes>("/");
 

@@ -7,7 +7,6 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"include": ["./frontend/src/**/*", "./server/**/*", "./shared/**/*"],
 		"ignore": ["./frontend/src/routeTree.gen.ts"]
 	},
 	"formatter": {

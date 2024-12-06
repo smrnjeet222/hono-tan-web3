@@ -1,25 +1,21 @@
 {
 	"name": "hono-tan",
-  "version": "0.0.1",
+	"version": "1.0.0",
 	"type": "module",
+	"description": "hono + tanstack monorepo",
+	"author": "jeet",
+	"license": "ISC",
 	"scripts": {
-		"dev": "tsx watch --env-file=.env server/index.ts",
-		"build": "tsup server/index.ts",
-		"start": "node --env-file=.env dist/index.cjs"
-	},
-	"dependencies": {
-		"@hono/node-server": "^1.13.7",
-		"@hono/zod-validator": "^0.4.1",
-		"hono": "^4.6.12",
-		"siwe": "^2.3.2",
-    "tsup": "^8.3.5",
-		"viem": "^2.21.53",
-		"zod": "^3.23.8"
+		"dev": "pnpm run -r dev",
+		"build": "pnpm run -r build",
+		"start": "pnpm run -filter ./server start"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "1.9.4",
-		"@types/node": "^20.11.17",
-		"lefthook": "^1.8.5",
-		"tsx": "^4.7.1"
+		"lefthook": "^1.8.5"
+	},
+	"dependencies": {
+		"hono": "^4.6.12",
+		"viem": "^2.21.54"
 	}
 }
