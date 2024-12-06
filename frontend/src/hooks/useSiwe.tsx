@@ -39,8 +39,10 @@ export function useSiwe() {
 		},
 
 		signOut: async () => {
-			await api.auth.logout.$post();
-			queryClient.setQueryData(getSiweSession.queryKey, null);
+			return;
+			// don't logout on wallet disconnect
+			//await api.auth.logout.$post();
+			//queryClient.setQueryData(getSiweSession.queryKey, null);
 		},
 	});
 

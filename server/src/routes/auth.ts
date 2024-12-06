@@ -1,3 +1,4 @@
+import { loggedIn } from "@/middleware/loggedIn";
 import { zValidator } from "@hono/zod-validator";
 import { Hono } from "hono";
 import { deleteCookie, getCookie, setCookie } from "hono/cookie";
@@ -20,8 +21,8 @@ export const authRouter = new Hono<HonoContext>()
 		});
 		return c.text(nonce);
 	})
-	.get("/me", async (c) => {
-		return c.json(c.get("user"), 200);
+	.get("/me", loggedIn, async (c) => {
+		return c.json(c.get("user") ?? null, 200);
 	})
 	.post(
 		"/verify",
